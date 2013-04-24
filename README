@@ -28,16 +28,5 @@ Note that the the instructions for compiling and running the model assume that y
 To make the figures after all expermients are completed, move into the 'postprocessing' directory and type '>python fig2.py' etc. The .pdfs are written to the 'figures' directory. There is also a script for printing out the numbers of the tables in the publication in a latex booktabs environment.
 
 
-
-REMOVE BEFORE PUBLISHING:
-put this readme file into the github dir.
-does this file cite the paper correctly (title)?
-tables
-fplane
-map files
-postprocess in run* excluded?
-clean github/postprocess/figures/*
-remove *~
-remove changedirs
-remove cpruns.py
+Stefan Riha   hoitaus@gmail.com
 
