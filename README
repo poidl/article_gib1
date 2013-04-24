@@ -13,16 +13,22 @@ The other runs are for plotting the spinup phase (same as above but more frequen
 
 The scripts for plotting the figures and printing the tables are located in the 'postprocessing' folder. To plot Fig. 1, you also have to get the file 'ETOPO1_Ice_g_gdal.grd.gz', unpack it and move it to the 'postprocessing' folder. The file can be downloaded here: http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/netcdf/ETOPO1_Ice_g_gdal.grd.gz
 
-Before compiling HIM, you have to edit the run*/Makefiles to suit your computing environment and:
+Apparently git cannot store empty folders. You have to create these yourself:
+>mkdir runXYZ/saves
+>mkdir runXYZ/data
+>mkdir postprocess/figures
+>mkdir postprocess/tables_tex
+
+Before compiling HIM, you have to edit the runXZY/Makefiles to suit your computing environment and:
 *) point SRCDIR to the HIM source code
-*) change INPUTDIR in run*/init.h
+*) change INPUTDIR in runXZY/init.h
 
 '>python prep_run.py' will build the input files for HIM.
 '>./make.sh' compiles HIM.
 '>./run.sh' runs the experiments.
 
 
-Note that the the instructions for compiling and running the model assume that you use 'mpirun' (openmpi). If this is not the case, then according changes have to be made in the 'run*/init.h', 'run*/Makefiles' and './run.sh' files. We used a single multi-core AMD Opteron Processor 3280, and one 3-year experiment (i.e. one of the experiments in the run* directories) took about half a day to complete.
+Note that the the instructions for compiling and running the model assume that you use 'mpirun' (openmpi). If this is not the case, then according changes have to be made in the 'run*/init.h', 'runXZY/Makefiles' and './run.sh' files. We used a single multi-core AMD Opteron Processor 3280, and one 3-year experiment (i.e. one of the experiments in the runXZY directories) took about half a day to complete.
 
 
 To make the figures after all expermients are completed, move into the 'postprocessing' directory and type '>python fig2.py' etc. The .pdfs are written to the 'figures' directory. There is also a script for printing out the numbers of the tables in the publication in a latex booktabs environment.
